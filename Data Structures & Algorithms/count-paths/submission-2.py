@@ -1,0 +1,18 @@
+# class Solution:
+#     def uniquePaths(self, m: int, n: int) -> int:
+#         # initialize a single row with 1s
+#         row = [1] * n
+
+#         for i in range(m - 1):
+#             newRow = [1] * n
+
+#             for j in range(n - 2, -1, -1):
+#                 newRow[j] = newRow[j + 1] + row[j]
+#             row = newRow
+#         return row[0]
+
+import math
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        return math.comb(m + n - 2, m - 1)
